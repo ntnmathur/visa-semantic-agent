@@ -217,3 +217,66 @@ __marimo__/
 .env
 metabase-data/
 __pycache__/
+.venv/
+
+# ------------------------------------------------------------
+# Python / Virtual Env
+# ------------------------------------------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+.venv/
+env/
+venv/
+*.egg-info/
+pip-wheel-metadata/
+
+# ------------------------------------------------------------
+# macOS System Files
+# ------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ------------------------------------------------------------
+# IDE / Editor Config
+# ------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ------------------------------------------------------------
+# DBT + MetricFlow Build Artifacts
+# ------------------------------------------------------------
+# dbt generated folders
+target/
+dbt_packages/
+logs/
+manifest.json
+run_results.json
+
+# MetricFlow cache / generated manifests
+metricflow_cache/
+semantic_manifest.json
+
+# ------------------------------------------------------------
+# Environment / Secrets
+# ------------------------------------------------------------
+.env
+.env.local
+.env.production
+.env.dev
+.DBT_PROFILES_DIR
+
+# ------------------------------------------------------------
+# Project Specific
+# ------------------------------------------------------------
+# Local data seeds or temporary scripts
+/data/
+*.db
+*.sql.tmp
+*.ipynb_checkpoints/

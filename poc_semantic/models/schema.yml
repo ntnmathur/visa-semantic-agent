@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: metricflow_time_spine
+    description: "Time spine for MetricFlow"
+    config:
+      time_spine:
+        standard_granularity_column: date_day

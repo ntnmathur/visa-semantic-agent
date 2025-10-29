@@ -1,0 +1,45 @@
+version: 2
+
+semantic_models:
+  - name: transactions_sm
+    model: ref('base_transactions')
+    description: "Transactional grain model capturing each purchase event"
+    defaults:
+      agg_time_dimension: txn_ts
+    entities:
+      - name: transaction
+        type: primary
+        expr: transaction_id
+    dimensions:
+      - name: merchant_id
+        type: categorical
+      - name: customer_id
+        type: categorical
+      - name: txn_ts
+        type: time
+        type_params:
+          time_granularity: day
+    measures:
+      - name: gmv
+        agg: sum
+        expr: amount
+      - name: txn_count
+        agg: count
+        expr: 1
+
+metrics:
+  - name: gmv
+    label: "Gross Merchandise Volume"
+    description: "Total sales amount"
+    type: simple
+    type_params:
+      measure:
+        name: gmv
+
+  - name: txn_count_metric
+    label: "Transaction Count"
+    description: "Number of transactions"
+    type: simple
+    type_params:
+      measure:
+        name: txn_count
